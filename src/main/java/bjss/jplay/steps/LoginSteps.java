@@ -56,8 +56,11 @@ public class LoginSteps {
         
     }
 
-    @Then("Login Failed")
-    public void thenLoginFailed() {
+    @Then("Error Message Displayed Is $errormessage")
+    public void thenErrorMessageDisplayed(@Named("errormessage") String password) {
+        
+        
+        
     }
     
     @Then("Login Succeeded")

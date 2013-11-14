@@ -6,9 +6,7 @@
 
 package bjss.jplay.testing.web;
 
-import org.jbehave.web.selenium.WebDriverPage;
 import org.jbehave.web.selenium.WebDriverProvider;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -29,6 +27,9 @@ public class Login extends AbstractPage {
     
     @FindBy(css = "input#signIn")
     private WebElement loginButton;
+    
+    @FindBy(css = "error-msg")
+    private WebElement errorMessage;
     
     public Login(WebDriverProvider driverProvider) {
         super(driverProvider);
@@ -57,5 +58,13 @@ public class Login extends AbstractPage {
     public void clickLogin() {
         //this.getDriverProvider().get().findElement(By.cssSelector("input.signIn"));
         this.loginButton.click();
+    }
+    
+    public boolean showingErrorMessage() {
+        return this.errorMessage.isDisplayed();
+    }
+    
+    public String getErrorMessage() {
+        return this.errorMessage.getText();
     }
 }
