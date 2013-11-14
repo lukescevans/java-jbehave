@@ -28,7 +28,7 @@ public class Login extends AbstractPage {
     @FindBy(css = "input#signIn")
     private WebElement loginButton;
     
-    @FindBy(css = "error-msg")
+    @FindBy(css = "span.error-msg")
     private WebElement errorMessage;
     
     public Login(WebDriverProvider driverProvider) {

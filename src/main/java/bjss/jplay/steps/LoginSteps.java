@@ -57,10 +57,13 @@ public class LoginSteps {
     }
 
     @Then("Error Message Displayed Is $errormessage")
-    public void thenErrorMessageDisplayed(@Named("errormessage") String password) {
+    public boolean thenErrorMessageDisplayed(@Named("errormessage") String errormessage) {
         
-        
-        
+        if (pages.login().showingErrorMessage()) {        
+            return pages.login().getErrorMessage().equals(errormessage);
+        } else {
+            return false;
+        }
     }
     
     @Then("Login Succeeded")
