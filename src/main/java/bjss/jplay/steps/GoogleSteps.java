@@ -16,7 +16,7 @@ import org.openqa.selenium.By;
 /**
  *
  * @author Luke.Evans
- *Story file is: googleSearch.story (jplay\src\main\resources\bjss\jplay\automation\stories\yahooSearch.story)
+ *Story file is: googleSearch.story (jplay\src\main\resources\bjss\jplay\automation\stories\googleSearch.story)
  */ 
 public class GoogleSteps {
 
