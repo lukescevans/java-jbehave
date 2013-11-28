@@ -16,13 +16,13 @@ import org.openqa.selenium.By;
 /**
  *
  * @author Luke.Evans
- *Story file is: yahooSearch.story (jplay\src\main\resources\bjss\jplay\automation\stories\yahooSearch.story)
+ *Story file is: googleSearch.story (jplay\src\main\resources\bjss\jplay\automation\stories\yahooSearch.story)
  */ 
-public class YahooSteps {
+public class GoogleSteps {
 
     final private PageFactory pages;
     
-    public YahooSteps(PageFactory pages) {
+    public GoogleSteps(PageFactory pages) {
         this.pages = pages;
     }
     
@@ -30,15 +30,15 @@ public class YahooSteps {
     public void givenPageName(@Named("pagename") String pagename) {
         System.out.println("lsce");
         
-        if (pagename.equalsIgnoreCase("YahooHomepage")) {
-            //Go to yahoo home page
-            pages.yahoohomepage().navigateToHomepage();            
+        if (pagename.equalsIgnoreCase("GoogleHomepage")) {
+            //Go to Google.com
+            pages.googlehomepage().navigateToHomepage();            
         }        
     }
         
     @When("I search for the keyword $searchterm")
     public void whenSearchForTerm(@Named("searchterm") String searchterm) {
-        pages.yahoohomepage().enterSearchTerm(searchterm);      
+        pages.googlehomepage().enterSearchTerm(searchterm);      
     }    
     
     
@@ -50,7 +50,7 @@ public class YahooSteps {
     @Then("search box will contain the term $searchterm")
     public void thenSearchBoxContainTerm(@Named("searchterm") String searchterm) {
         //Does search box contents contain entered search term
-        boolean retVal= pages.yahoohomepage().getSearchBoxText().equalsIgnoreCase(searchterm);
+        boolean retVal= pages.googlehomepage().getSearchBoxText().equalsIgnoreCase(searchterm);
                 
         //Evaluate if search term exists or not
         Assert.assertEquals(true, retVal);

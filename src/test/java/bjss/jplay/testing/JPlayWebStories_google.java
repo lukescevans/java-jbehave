@@ -7,7 +7,7 @@ package bjss.jplay.testing;
  */
 /**
  *
- * @author David.Paterson
+ * @author Luke.Evans
  */
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.Arrays;
@@ -20,7 +20,7 @@ import org.junit.runner.RunWith;
 
 import de.codecentric.jbehave.junit.monitoring.JUnitReportingRunner;
 import bjss.jplay.testing.web.PageFactory;
-import bjss.jplay.steps.YahooSteps;
+import bjss.jplay.steps.GoogleSteps;
 import static java.util.Arrays.asList;
 import org.jbehave.core.Embeddable;
 import org.jbehave.core.configuration.Configuration;
@@ -42,7 +42,7 @@ import org.jbehave.web.selenium.WebDriverScreenshotOnFailure;
 import org.jbehave.web.selenium.WebDriverSteps;
 
 //@RunWith(JUnitReportingRunner.class)
-public class JPlayWebStories_yahoo extends JUnitStories {
+public class JPlayWebStories_google extends JUnitStories {
 
     private WebDriverProvider driverProvider = new PropertyWebDriverProvider();
     private WebDriverSteps lifecycleSteps = new PerStoriesWebDriverSteps(driverProvider); // or PerStoryWebDriverSteps(driverProvider)
@@ -50,7 +50,7 @@ public class JPlayWebStories_yahoo extends JUnitStories {
     private SeleniumContext context = new SeleniumContext();
     private ContextView contextView = new LocalFrameContextView().sized(500, 100);
 
-    public JPlayWebStories_yahoo() {
+    public JPlayWebStories_google() {
         super();
 
         if (lifecycleSteps instanceof PerStoriesWebDriverSteps) {
@@ -78,14 +78,14 @@ public class JPlayWebStories_yahoo extends JUnitStories {
     public InjectableStepsFactory stepsFactory() {
         Configuration configuration = configuration();
         return new InstanceStepsFactory(configuration,
-                new YahooSteps(pages),
+                new GoogleSteps(pages),
                 lifecycleSteps,
                 new WebDriverScreenshotOnFailure(driverProvider, configuration.storyReporterBuilder()));
     }
 
     @Override
     protected List<String> storyPaths() {
-        return Arrays.asList("bjss/jplay/automation/stories/yahooSearch.story");
+        return Arrays.asList("bjss/jplay/automation/stories/googleSearch.story");
     }
 
     // This Embedder is used by Maven or Ant and it will override anything set in the constructor

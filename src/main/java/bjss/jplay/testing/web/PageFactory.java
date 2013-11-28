@@ -17,7 +17,7 @@ public class PageFactory {
  
     private final WebDriverProvider driverProvider;
     private Login login;
-    private YahooHomepage yahoohomepage;
+    private GoogleHomepage googlehomepage;
     
     //private FindSteps findSteps;
     // More pages as needed
@@ -34,11 +34,11 @@ public class PageFactory {
         return login;
     }
     
-    public YahooHomepage yahoohomepage(){
-    if (yahoohomepage == null ){
-        yahoohomepage = new YahooHomepage(driverProvider);            
-        initElements(driverProvider.get(), yahoohomepage);            
+    public GoogleHomepage googlehomepage(){
+    if (googlehomepage == null ){
+        googlehomepage = new GoogleHomepage(driverProvider);            
+        initElements(driverProvider.get(), googlehomepage);            
     }
-    return yahoohomepage;
+    return googlehomepage;
     }
 }

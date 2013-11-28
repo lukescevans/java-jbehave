@@ -19,10 +19,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  * @author Luke.Evans
  */
-public class YahooHomepage extends AbstractPage {
+public class GoogleHomepage extends AbstractPage {
     
     private final String Homepagetitle = "Google";
-    private final String YahooHomepageURLHomepage = "http://www.google.com/";
+    private final String GoogleHomepageURL = "http://www.google.com/";
     
     @FindBy(id = "gbqfq")
     private WebElement searchBox;
@@ -31,7 +31,7 @@ public class YahooHomepage extends AbstractPage {
     private WebElement searchSubmit;
     
     //Constructor
-    public YahooHomepage(WebDriverProvider driverProvider) {
+    public GoogleHomepage(WebDriverProvider driverProvider) {
         super(driverProvider);
         
         //Check the page title is correct in the ctr
@@ -44,7 +44,7 @@ public class YahooHomepage extends AbstractPage {
         
     public void doSearch(String searchTerm) {        
         //Goto yahoo home page
-        this.navigate().to(YahooHomepageURLHomepage);
+        this.navigate().to(GoogleHomepageURL);
         //check current page is correct
         verifyPageTitle();
         //Enter search text
@@ -63,7 +63,7 @@ public class YahooHomepage extends AbstractPage {
     }    
     
     public void navigateToHomepage() {        
-        this.navigate().to(YahooHomepageURLHomepage);            
+        this.navigate().to(GoogleHomepageURL);            
     }  
     
     public String getSearchBoxText() {
