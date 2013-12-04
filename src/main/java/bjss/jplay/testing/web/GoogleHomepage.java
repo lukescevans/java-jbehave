@@ -24,10 +24,10 @@ public class GoogleHomepage extends AbstractPage {
     private final String Homepagetitle = "Google";
     private final String GoogleHomepageURL = "http://www.google.com/";
     
-    @FindBy(id = "gbqfq")
+    @FindBy(id = "gbqfq") //Search box
     private WebElement searchBox;
     
-    @FindBy(id = "gbqfb")
+    @FindBy(id = "gbqfb") //Submit button
     private WebElement searchSubmit;
     
     //Constructor
@@ -38,7 +38,12 @@ public class GoogleHomepage extends AbstractPage {
         //Assert.assertEquals(Homepagetitle, this.getTitle());                
     }
     
-    public boolean verifyPageTitle() {
+    /**
+    *
+    * @author Luke.Evans
+    * Get page title and verify equal to Google
+    */
+    public boolean verifyPageTitle() {        
         return this.getTitle().equals(Homepagetitle);
     }
         

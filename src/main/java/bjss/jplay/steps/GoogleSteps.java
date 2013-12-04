@@ -28,7 +28,7 @@ public class GoogleSteps {
     
     @Given("I am on the $pagename")
     public void givenPageName(@Named("pagename") String pagename) {
-        System.out.println("lsce");
+        System.out.println("@Given(\"I am on the $pagename\")");
         
         if (pagename.equalsIgnoreCase("GoogleHomepage")) {
             //Go to Google.com
